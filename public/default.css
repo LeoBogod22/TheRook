@@ -58,10 +58,16 @@ button:hover {
 
 #f{
 
-	margin-left: 500px;
+	margin-left: 850px;
 	margin-bottom: -200px;
 	position: relative;
 	top: 200px;
+	text-align: left;
+}
+
+#ff{
+
+	margin-top: -20px;
 }
 span, span:after {
     font-weight: 900;
