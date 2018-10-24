@@ -1,0 +1,24 @@
+{
+  "name": "RealChess",
+  "version": "0.0.1",
+  "description": "Real-time chess game ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dwcares/socketserver"
+  },
+  "author": "dwcares",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dwcares/socketserver/issues"
+  },
+  "homepage": "https://github.com/dwcares/socketserver",
+  "dependencies": {
+    "chess.js": "^0.10.2",
+    "express": "^4.16.2",
+    "socket.io": "^1.7.4"
+  }
+}

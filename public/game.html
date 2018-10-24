@@ -1,0 +1,121 @@
+
+
+
+
+
+
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=410; user-scalable=no; minimal-ui">
+    <title>Real Chess</title>
+    <link rel="stylesheet" href="/lib/chessboard-0.3.0.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/lib/WinJS.4.0/css/ui-light.css" />
+
+
+
+        <script src="/lib/socket.io-1.2.0.js"></script>
+    <script src="/lib/jquery-1.11.1.js"></script>
+    <script src="/lib/WinJS.4.0/js/WinJS.min.js"></script>
+    <script src="/lib/chess.min.js"></script> 
+    <script src="/lib/chessboard-0.3.0.min.js"></script> 
+    <script src="/default.js"></script>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.2/chess.js"></script>
+    <link rel="stylesheet" href="/default.css" />
+  </head>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" style=":hover: "color : black;"> <a href="/dashboard/">      New Game     </a>
+
+      </button>
+      <a class="navbar-brand" href="/">The Rooks</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/dashboard/">New Game</a></li>
+        <li> <a href="/"> </a><li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="/game/">Puzzle Of the Day</a></li>
+       
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<br></br>
+<h4 style="text-align: center;"> Magnus Carlsen Vs Levon Aronian 2017</h4>
+<div class="chessboard" id="board5" style="margin: 0 auto; width: 400px;">
+</div>
+<div style="margin: 5px auto; width: 400px;">
+<input type="button" id="prevBtn5" value="<" />
+<input type="button" id="nextBtn5" value=">" />
+
+<p><div id="pgn5"></div></p>
+</div>
+<script type="text/javascript">
+$(function() {
+  var cfg = {
+    pieceTheme: 'https://koblenski.github.io/javascript/chessboardjs-0.3.0/img/chesspieces/wikipedia/{piece}.png',
+    position: 'start'
+  };
+  var board = ChessBoard('board5', cfg);
+  var game = new Chess();
+var pgn = '1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.O-O Nxe4 5.Re1 Nd6 6.Nxe5 Be7 7.Bf1 Nxe5 8.Rxe5 O-O 9.d4 Bf6 10.Re1 Nf5 11.d5 Re8 12.Rxe8+Qxe8 13.Qd3 d6 14.Nd2 Bg5 15.Nf3 Bxc1 16.Rxc1 Bd7 17.Re1 Qd8 18.Qc4 g6 19.h3 Ng7 20.Re3 a5 21.a4 Ne8 22.Qd4 Ng7 23.g4 c6 24.c4 Ne8 25.Qf4 Kg7 26.Rb3 Rb8 27.Ng5 Nf6 28.Rf3 h6 29.Ne4 Nxe4 30.Qxf7+ Kh8 31.Qxg6 1-0';
+  game.load_pgn(pgn);
+  $('#pgn5').html(pgn);
+
+    var history = game.history();
+  game.reset();
+  var i = 0;
+
+   $('#nextBtn5').on('click', function() {
+    game.move(history[i]);
+    board.position(game.fen());
+    i += 1;
+    if (i > history.length) {
+      i = history.length;
+    }
+  });
+
+    $('#prevBtn5').on('click', function() {
+    game.undo();
+    board.position(game.fen());
+    i -= 1;
+    if (i < 0) {
+      i = 0;
+    }
+  });
+
+      $('#startPositionBtn5').on('click', function() {
+    game.reset();
+    board.start();
+    i = 0;
+  });
+
+  // 6. If End button clicked, go to end position
+  $('#endPositionBtn5').on('click', function() {
+    game.load_pgn(pgn);
+    board.position(game.fen());
+    i = history.length;
+  });
+  // 1. Load a PGN into the game
+  // 2. Get the full move history
+  // 3. If Next button clicked, move forward one
+  // 4. If Prev button clicked, move backward one
+  // 5. If Start button clicked, go to start position
+  // 6. If End button clicked, go to end position
+});
+</script>
+
+
+
+
+</body>
+</html>

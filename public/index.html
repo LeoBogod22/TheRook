@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=410; user-scalable=no; minimal-ui">
+    <title>Real Chess</title>
+    <link rel="stylesheet" href="lib/chessboard-0.3.0.min.css">
+    <link rel="stylesheet" href="lib/WinJS.4.0/css/ui-light.css" />
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="/default.css" />
+  </head>
+  <body>
+
+
+
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" style=":hover: "color : black;"> <a href="/dashboard/">      New Game     </a>
+
+      </button>
+      <a class="navbar-brand" href="/">The Rooks</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/dashboard/">New Game</a></li>
+        <li> <a href="/"> </a><li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="/game/">Latest chess game</a></li>
+       
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="hero">
+
+   <h1> <br><span data-shadow-text="Text-Shadow">The Rooks </span><br></h1>
+</div>
+
+    <div class="page lobby" id='page-lobby' style="">
+    <div class="frosty col-xs-12 text-center col-md-6 col-md-offset-3">
+      <h2>Welcome </h2>
+     <hr>
+ <div class="each-game col-xs-12">
+          <div class="col-xs-10 col-xs-offset-1 col-md-6 ">
+<br></br>
+    <h3 id="f"   style="margin-left: 300px; position: relative; top:-20px;">Games </h3>
+      <div id='gamesList'>
+       
+      </div>
+
+      </div></div>
+
+      <h3>Online players</h3>
+<br></br>
+
+       <div id='userList'>
+         No users online
+      </div>
+    </div>
+
+    </div>
+    <div class="page game" id='page-game'  style="display:none; margin-left: 500px;">
+      <button id='game-back'>Back</button>
+      <button id='game-resign'>Resign</button>
+        <button id='draw'>Draw</button>
+
+        <p id="mess"></p>
+
+         <form action="">
+
+
+     
+    </form>
+        </script>
+      <div id='game-board' style="width: 400px">
+      </div>
+    </div>
+   
+
+
+
+    <script src="lib/socket.io-1.2.0.js"></script>
+    <script src="lib/jquery-1.11.1.js"></script>
+    <script src="lib/WinJS.4.0/js/WinJS.min.js"></script>
+    <script src="lib/chess.min.js"></script> 
+    <script src="lib/chessboard-0.3.0.min.js"></script> 
+    <script src="/default.js"></script>
+  </body>
+</html>

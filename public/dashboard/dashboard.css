@@ -1,0 +1,38 @@
+.gameboard {
+	width: 200px;
+	margin-left: 5px;
+	margin-top: 5px;
+}
+
+body {
+	overflow-y: auto;
+}
+
+#games {
+	display: flex;
+	flex-flow: row wrap;
+
+	/*transform: scale(0.5);*/
+}
+body {
+	overflow-y: auto;		
+	padding-left: 40px;		
+	padding-top: 40px;		
+	flex-flow: column;
+	align-content: center;
+	align-items: center;
+}	
+	.page {
+			margin-top: 20px;
+}	
+ .page-login {
+
+		margin-bottom: 10px;			
+	}		
+	
+.page.game button {
+	margin-bottom: 10px;	
+}
+ #page-lobby{	
+	display: none;		display: none;
+}
