@@ -4,8 +4,8 @@ Real-time chess game
 
 
 # Created Using Socket.IO and Node.js
+## current Features 
 
-Users can Sign in with a guest login 
 - host a game 
 
 - offer draw
