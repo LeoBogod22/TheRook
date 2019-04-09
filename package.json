@@ -1,24 +1,62 @@
 {
-  "name": "RealChess",
-  "version": "0.0.1",
-  "description": "Real-time chess game ",
-  "main": "app.js",
+  "name": "Chess",
+  "description": "Multiplayer chess",
+  "version": "0.0.0",
+  "homepage": "",
+  "main": "src/",
+  "keywords": [
+    "feathers"
+  ],
+  "license": "MIT",
+  "repository": {},
+  "author": {},
+  "contributors": [],
+  "bugs": {},
+  "engines": {
+    "node": "6.2.1",
+    "npm": "3.9.3"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run jshint && npm run mocha",
+    "jshint": "jshint src/. test/. --config",
+    "start": "node src/",
+    "mocha": "mocha test/ --recursive",
+    "postinstall": "./node_modules/.bin/webpack",
+    "webpack": "./node_modules/.bin/webpack --watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dwcares/socketserver"
-  },
-  "author": "dwcares",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dwcares/socketserver/issues"
-  },
-  "homepage": "https://github.com/dwcares/socketserver",
   "dependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "body-parser": "^1.15.2",
     "chess.js": "^0.10.2",
-    "express": "^4.16.2",
-    "socket.io": "^1.7.4"
+    "compression": "^1.6.2",
+    "cors": "^2.8.1",
+    "feathers": "^2.0.2",
+    "feathers-authentication": "^0.7.11",
+    "feathers-configuration": "^0.3.3",
+    "feathers-errors": "^2.4.0",
+    "feathers-hooks": "^1.5.8",
+    "feathers-nedb": "^2.5.1",
+    "feathers-rest": "^1.5.1",
+    "feathers-socketio": "^1.4.1",
+    "lodash": "^4.16.4",
+    "nedb": "^1.8.0",
+    "passport": "^0.3.2",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.8.1",
+    "redux": "^3.6.0",
+    "redux-logger": "^2.7.0",
+    "serve-favicon": "^2.3.0",
+    "webpack": "^1.13.2",
+    "winston": "^2.2.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.9.4",
+    "mocha": "^3.1.2",
+    "request": "^2.75.0"
   }
 }
