@@ -14,6 +14,8 @@ Real-time chess game
 
 - enter a game
 
+- Accept/Decline draw
+
 -  Accept A game 
 
 - View Latest Chess Game Of the Day 
