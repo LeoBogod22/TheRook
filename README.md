@@ -1,5 +1,5 @@
 # Real Chess
-Real-time chess game 
+Real-time chess App
 
 
 
